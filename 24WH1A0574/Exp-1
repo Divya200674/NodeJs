@@ -1,0 +1,202 @@
+//ebook_home.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Home</title>
+<link rel="stylesheet" href="ebook_style.css">
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;"> E-Book Management System</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<!-- HERO SECTION -->
+<div class="ebook-container">
+<div class="hero" style="display:flex; flex-direction:column; justify-content:center;
+alignements:center; height:70vh; text-align:center;">
+<h1 style="font-size:3em; text-shadow:2px 2px 8px rgba(0,0,0,0.6);">Welcome
+to E-Book World</h1>
+<p style="font-size:1.5em; margin-top:15px; text-shadow:1px 1px 6px
+rgba(0,0,0,0.5);">
+Explore, Read & Buy Your Favorite E-Books Online
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+//ebook_login.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Login</title>
+<link rel="stylesheet" href="ebook_style.css">
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  E-Book System</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<div class="ebook-container">
+<div class="ebook-form">
+<h2>Login</h2>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<button class="ebook-btn" onclick="alert('Login
+Successful')">Login</button>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+//ebook_register.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Registration</title>
+<link rel="stylesheet" href="ebook_style.css">
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  E-Book System</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<div class="ebook-container">
+<div class="ebook-form">
+<h2>Registration</h2>
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button class="ebook-btn" onclick="alert('Registration
+Successful')">Register</button>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+//ebook_catalog.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Catalog</title>
+<link rel="stylesheet" href="ebook_style.css">
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  Catalog</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div
+>
+</div>
+<div class="ebook-container">
+<div class="ebook-grid">
+<div class="ebook-card">
+<img
+src="https://via.placeholder.com/150x200?text=Software+Engineering"
+alt="Software Engineering" style="width:100%; border-radius:8px;">
+<h4>Software Engineering</h4>
+<p>₹500</p>
+<a href="ebook_cart.html"><button class="ebook-btn">Add to
+Cart</button></a>
+</div>
+<div class="ebook-card">
+<img src="https://via.placeholder.com/150x200?text=Data+Structures"
+alt="Data Structures" style="width:100%; border-radius:8px;">
+<h4>Data Structures</h4>
+<p>₹450</p>
+<a href="ebook_cart.html"><button class="ebook-btn">Add to
+Cart</button></a>
+</div>
+<div class="ebook-card">
+<img
+src="https://via.placeholder.com/150x200?text=Operating+Systems"
+alt="Operating Systems" style="width:100%; border-radius:8px;">
+<h4>Operating Systems</h4>
+<p>₹400</p>
+<a href="ebook_cart.html"><button class="ebook-btn">Add to
+Cart</button></a>
+</div>
+<div class="ebook-card">
+<img
+src="https://via.placeholder.com/150x200?text=Computer+Networks"
+alt="Computer Networks" style="width:100%; border-radius:8px;">
+<h4>Computer Networks</h4>
+<p>₹350</p>
+<a href="ebook_cart.html"><button class="ebook-btn">Add to
+Cart</button></a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+//ebook_cart.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Cart</title>
+<link rel="stylesheet" href="ebook_style.css">
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  Cart</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<div class="ebook-container">
+<div class="ebook-form">
+<h3>Selected Books</h3>
+<p>Software Engineering – ₹500</p>
+<p>Operating Systems – ₹450</p>
+<hr>
+<h4>Total: ₹950</h4>
+<button class="ebook-btn" onclick="alert('Order Placed Successfully')">
+Checkout
+</button>
+</div>
+</div>
+</div>
+</body>
+</html>
