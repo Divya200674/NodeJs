@@ -1,0 +1,113 @@
+//ebook_login.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Login</title>
+<link rel="stylesheet" href="ebook_style.css">
+<script>
+// Client-side validation for login
+function validateLogin() {
+var username = document.getElementById("login-username").value.trim();
+var password = document.getElementById("login-password").value.trim();
+if(username === "") {
+alert("Please enter your username");
+return false;
+}
+if(password === "") {
+alert("Please enter your password");
+return false;
+}
+alert("Login Successful");
+return true;
+}
+</script>
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  E-Book System</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<div class="ebook-container">
+<div class="ebook-form">
+<h2>Login</h2>
+<input type="text" id="login-username" placeholder="Username">
+<input type="password" id="login-password" placeholder="Password">
+<button class="ebook-btn" onclick="validateLogin()">Login</button>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+//ebook_register.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Book Registration</title>
+<link rel="stylesheet" href="ebook_style.css">
+<script>
+// Client-side validation for registration
+function validateRegister() {
+var name = document.getElementById("reg-name").value.trim();
+var email = document.getElementById("reg-email").value.trim();
+var password = document.getElementById("reg-password").value.trim();
+if(name === "") {
+alert("Please enter your full name");
+return false;
+}
+if(email === "") {
+alert("Please enter your email");
+return false;
+}
+// Simple email format validation
+var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+if(!email.match(emailPattern)) {
+alert("Please enter a valid email address");
+return false;
+}
+if(password === "") {
+alert("Please enter your password");
+return false;
+}
+if(password.length < 5) {
+alert("Password must be at least 5 characters");
+return false;
+}
+alert("Registration Successful");
+return true;
+}
+</script>
+</head>
+<body>
+<div class="overlay">
+<!-- NAVBAR -->
+<div class="ebook-navbar">
+<h3 style="color:white;">  E-Book System</h3>
+<div>
+<a href="ebook_home.html">Home</a>
+<a href="ebook_login.html">Login</a>
+<a href="ebook_register.html">Register</a>
+<a href="ebook_catalog.html">Catalog</a>
+<a href="ebook_cart.html">Cart</a>
+</div>
+</div>
+<div class="ebook-container">
+<div class="ebook-form">
+<h2>Registration</h2>
+<input type="text" id="reg-name" placeholder="Full Name">
+<input type="email" id="reg-email" placeholder="Email">
+<input type="password" id="reg-password" placeholder="Password">
+<button class="ebook-btn" onclick="validateRegister()">Register</button>
+</div>
+</div>
+</div>
+</body>
+</html>
