@@ -1,0 +1,265 @@
+//login.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="common-bg">
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="col-md-4">
+<div class="page-box">
+<h3 class="text-center">  Login</h3>
+<!-- ERROR MESSAGE -->
+<div id="errorMsg" class="alert alert-danger d-none"></div>
+<form onsubmit="return loginValidate()">
+<input type="text" id="username" class="form-control mb-3"
+placeholder="Username">
+<input type="password" id="password" class="form-control mb-3"
+placeholder="Password">
+<button class="btn btn-primary w-100">Login</button>
+</form>
+</div>
+<!-- SUCCESS BOX -->
+<div id="loginMsg" class="msg-box d-none text-center mt-3">
+✅ Logged in successfully
+<br><br>
+<button class="btn btn-success btn-sm"
+onclick="goHome()">OK</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function loginValidate() {
+let username = document.getElementById("username").value.trim();
+let password = document.getElementById("password").value.trim();
+let errorMsg = document.getElementById("errorMsg");
+// Reset messages
+errorMsg.classList.add("d-none");
+errorMsg.innerHTML = "";
+// Username validation
+if (username === "") {
+errorMsg.innerHTML = "❌ Username cannot be empty";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if (username.length < 4) {
+errorMsg.innerHTML = "❌ Username must be at least 4 characters";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Password validation
+if (password === "") {
+errorMsg.innerHTML = "❌ Password cannot be empty";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if (password.length < 6) {
+errorMsg.innerHTML = "❌ Password must be at least 6 characters";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// If all validations pass
+document.getElementById("loginMsg").classList.remove("d-none");
+return false; // prevent actual form submit
+}
+function goHome(){
+window.location.href = "home.html";
+}
+</script>
+</body>
+</html>
+
+//register.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="common-bg">
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="col-md-5">
+<div class="page-box">
+<h3 class="text-center">  Registration</h3>
+<!-- ERROR MESSAGE -->
+<div id="errorMsg" class="alert alert-danger d-none"></div>
+<form onsubmit="return registerValidate()">
+<input type="text" id="name" class="form-control mb-2"
+placeholder="Name">
+<input type="email" id="email" class="form-control mb-2"
+placeholder="Email">
+<input type="password" id="password" class="form-control mb-2"
+placeholder="Password">
+<button class="btn btn-success w-100">Register</button>
+</form>
+</div>
+<!-- SUCCESS BOX -->
+<div id="registerMsg" class="msg-box d-none text-center mt-3">
+✅ Registration successful
+<br><br>
+<button class="btn btn-success btn-sm"
+onclick="goLogin()">OK</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function registerValidate() {
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let password = document.getElementById("password").value.trim();
+let errorMsg = document.getElementById("errorMsg");
+// reset error
+errorMsg.classList.add("d-none");
+errorMsg.innerHTML = "";
+// Name validation
+if (name === "") {
+errorMsg.innerHTML = "❌ Name cannot be empty";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if (name.length < 3) {
+errorMsg.innerHTML = "❌ Name must be at least 3 characters";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Email validation
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (email === "") {
+errorMsg.innerHTML = "❌ Email cannot be empty";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if (!emailPattern.test(email)) {
+errorMsg.innerHTML = "❌ Enter a valid email address";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Password validation
+if (password === "") {
+errorMsg.innerHTML = "❌ Password cannot be empty";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if (password.length < 6) {
+errorMsg.innerHTML = "❌ Password must be at least 6 characters";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Success
+document.getElementById("registerMsg").classList.remove("d-none");
+return false; // prevent actual submit
+}
+function goLogin(){
+window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
+
+//booking.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Ticket</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="bookingBody" class="movie-bg">
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="page-box">
+<h3 class="text-center">  Ticket Booking</h3>
+<!-- ERROR MESSAGE -->
+<div id="errorMsg" class="alert alert-danger d-none"></div>
+<form onsubmit="return bookingValidate()">
+<select id="type" class="form-control mb-2"
+onchange="changeBG(this.value)">
+<option value="">-- Select Ticket Type --</option>
+<option value="movie">Movie</option>
+<option value="bus">Bus</option>
+<option value="train">Train</option>
+</select>
+<input type="date" id="date" class="form-control mb-2">
+<input type="number" id="tickets" class="form-control mb-2"
+placeholder="Number of Tickets">
+<button class="btn btn-warning w-100">Confirm Booking</button>
+</form>
+</div>
+<!-- SUCCESS BOX -->
+<div id="bookingMsg" class="msg-box d-none text-center mt-3">
+  Ticket booked successfully
+<br><br>
+<button class="btn btn-success btn-sm"
+onclick="goHome()">OK</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function changeBG(type){
+if(type !== ""){
+document.getElementById("bookingBody").className = type + "-bg";
+}
+}
+function bookingValidate(){
+let type = document.getElementById("type").value;
+let date = document.getElementById("date").value;
+let tickets = document.getElementById("tickets").value;
+let errorMsg = document.getElementById("errorMsg");
+errorMsg.classList.add("d-none");
+errorMsg.innerHTML = "";
+// Type validation
+if(type === ""){
+errorMsg.innerHTML = "❌ Please select ticket type";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Date validation
+if(date === ""){
+errorMsg.innerHTML = "❌ Please select a date";
+errorMsg.classList.remove("d-none");
+return false;
+}
+let selectedDate = new Date(date);
+let today = new Date();
+today.setHours(0,0,0,0);
+if(selectedDate < today){
+errorMsg.innerHTML = "❌ Date cannot be in the past";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Ticket count validation
+if(tickets === "" || tickets <= 0){
+errorMsg.innerHTML = "❌ Enter valid number of tickets";
+errorMsg.classList.remove("d-none");
+return false;
+}
+if(tickets > 10){
+errorMsg.innerHTML = "❌ Maximum 10 tickets allowed";
+errorMsg.classList.remove("d-none");
+return false;
+}
+// Success
+document.getElementById("bookingMsg").classList.remove("d-none");
+return false; // prevent actual submit
+}
+function goHome(){
+window.location.href = "home.html";
+}
+</script>
+</body>
+</html>
